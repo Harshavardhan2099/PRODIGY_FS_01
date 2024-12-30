@@ -1,0 +1,11 @@
+<h2>
+    Welcome to the dashboard
+</h2>
+<p>
+    Role based content will be displayed here. 
+</p>
+
+{% if user.groups.all.0.name == 'Admin' %}
+    <a href="{% url 'admin_only' %}">Admin Panel</a>
+{% endif %}
+<a href="{% url 'logout' %}">Logout</a>
